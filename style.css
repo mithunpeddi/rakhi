@@ -1,0 +1,2744 @@
+
+/* =========================================================
+   RAKHI SURPRISE — FINAL STYLE
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root {
+  --maroon: #741f32;
+  --maroon-dark: #4c1422;
+  --wine: #8d3046;
+
+  --cream: #f8efe1;
+  --paper: #fffaf2;
+  --paper-dark: #f1e3cf;
+
+  --gold: #bd8a43;
+  --gold-light: #e5c27f;
+
+  --ink: #302020;
+  --muted: #776565;
+
+  --white: #fffdf9;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  min-height: 100%;
+
+  font-family:
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  color: var(--ink);
+
+  background:
+    #32161e;
+
+  overflow-x: hidden;
+}
+
+
+button {
+  font-family: inherit;
+}
+
+
+button:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+#app {
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 12%,
+      rgba(255,255,255,.09),
+      transparent 27%
+    ),
+
+    radial-gradient(
+      circle at 88% 78%,
+      rgba(215,170,91,.12),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      #351820 0%,
+      #672637 48%,
+      #32151c 100%
+    );
+}
+
+
+/* =========================================================
+   SCREEN SYSTEM
+   ========================================================= */
+
+.screen {
+
+  display: none !important;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding:
+    clamp(20px, 4vw, 60px);
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+}
+
+
+.screen.active {
+
+  display: flex !important;
+
+  animation:
+    pageEnter
+    .65s
+    cubic-bezier(.2,.75,.2,1);
+}
+
+
+@keyframes pageEnter {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+/* =========================================================
+   COMMON TYPOGRAPHY
+   ========================================================= */
+
+.eyebrow {
+
+  margin: 0;
+
+  font-size: .7rem;
+
+  font-weight: 600;
+
+  letter-spacing: .22em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,.72);
+}
+
+
+.eyebrow.dark {
+
+  color:
+    var(--maroon);
+
+  opacity: .78;
+}
+
+
+h1,
+h2 {
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+}
+
+
+strong {
+
+  color:
+    var(--maroon);
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+
+  border: 0;
+
+  cursor: pointer;
+
+  min-height: 50px;
+
+  padding:
+    13px 27px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    .88rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    .03em;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+
+  -webkit-tap-highlight-color:
+    transparent;
+}
+
+
+.btn:hover {
+
+  transform:
+    translateY(-2px);
+}
+
+
+.btn:active {
+
+  transform:
+    translateY(0)
+    scale(.98);
+}
+
+
+.btn-primary {
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--maroon),
+      var(--wine)
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(87,22,38,.28);
+}
+
+
+.btn-secondary {
+
+  color:
+    #fff7ef;
+
+  background:
+    rgba(255,255,255,.09);
+
+  border:
+    1px solid
+    rgba(255,255,255,.22);
+}
+
+
+.btn-outline {
+
+  color:
+    var(--maroon);
+
+  background:
+    transparent;
+
+  border:
+    1px solid
+    rgba(116,31,50,.35);
+
+  box-shadow:
+    none;
+}
+
+
+/* =========================================================
+   PAGE 1 — OPENING
+   ========================================================= */
+
+.opening-page {
+
+  width: 100%;
+
+  max-width: 900px;
+
+  text-align: center;
+
+  color: white;
+
+  padding:
+    40px 20px;
+}
+
+
+.opening-decoration {
+
+  color:
+    var(--gold-light);
+
+  font-size:
+    3rem;
+
+  line-height: 1;
+
+  margin-bottom:
+    22px;
+
+  animation:
+    softFloat
+    3s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes softFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-7px);
+  }
+
+}
+
+
+.opening-title {
+
+  margin:
+    22px auto;
+
+  max-width:
+    850px;
+
+  font-size:
+    clamp(
+      3.1rem,
+      8vw,
+      6.8rem
+    );
+
+  line-height:
+    .88;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    -.035em;
+}
+
+
+.opening-title span {
+
+  color:
+    var(--gold-light);
+
+  font-style:
+    italic;
+
+  font-weight:
+    500;
+}
+
+
+.opening-subtitle {
+
+  margin:
+    20px 0 0;
+
+  color:
+    #efdcd2;
+
+  font-size:
+    .98rem;
+}
+
+
+.opening-actions {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    13px;
+
+  margin-top:
+    35px;
+}
+
+
+.opening-actions .btn {
+
+  min-width:
+    145px;
+}
+
+
+/* Don't open message */
+
+.dont-message {
+
+  margin:
+    25px auto 0;
+
+  color:
+    #ffe0d6;
+
+  font-size:
+    1rem;
+
+  animation:
+    messagePop
+    .45s
+    ease;
+}
+
+
+@keyframes messagePop {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(8px)
+      scale(.96);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+
+  }
+
+}
+
+
+/* Bigger OPEN button */
+
+#open-first.open-after-denied {
+
+  min-width:
+    190px;
+
+  min-height:
+    62px;
+
+  padding:
+    16px 36px;
+
+  font-size:
+    1.08rem;
+
+  transform:
+    scale(1.08);
+
+  box-shadow:
+    0 16px 38px
+    rgba(116,31,50,.42);
+
+  animation:
+    openPulse
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes openPulse {
+
+  0%,
+  100% {
+
+    box-shadow:
+      0 16px 38px
+      rgba(116,31,50,.35);
+
+  }
+
+  50% {
+
+    box-shadow:
+      0 20px 48px
+      rgba(116,31,50,.55);
+
+  }
+
+}
+
+
+/* =========================================================
+   PAGE 2 — HONEST INTRO
+   ========================================================= */
+
+.honest-page {
+
+  width: 100%;
+
+  max-width: 900px;
+
+  padding:
+    clamp(30px, 5vw, 60px);
+
+  position: relative;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(255,250,242,.98),
+      rgba(255,250,242,.98)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.7);
+
+  border-radius:
+    30px;
+
+  box-shadow:
+    0 28px 85px
+    rgba(0,0,0,.28);
+}
+
+
+.page-number {
+
+  position: absolute;
+
+  top: 25px;
+
+  right: 30px;
+
+  font-size: .7rem;
+
+  letter-spacing: .16em;
+
+  color:
+    var(--gold);
+}
+
+
+.honest-copy {
+
+  max-width:
+    760px;
+
+  margin:
+    20px auto 0;
+}
+
+
+.honest-copy h2 {
+
+  margin:
+    18px auto;
+
+  font-size:
+    clamp(
+      2.25rem,
+      5vw,
+      4.2rem
+    );
+
+  line-height:
+    1.02;
+
+  font-weight:
+    600;
+
+  color:
+    var(--ink);
+}
+
+
+.honest-line {
+
+  margin:
+    18px auto 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      1.3rem,
+      2.6vw,
+      1.75rem
+    );
+
+  color:
+    var(--muted);
+}
+
+
+.highlight-word {
+
+  color:
+    var(--maroon);
+
+  letter-spacing:
+    .06em;
+}
+
+
+/* =========================================================
+   GIFT AREA
+   ========================================================= */
+
+.gift-area {
+
+  margin-top:
+    32px;
+}
+
+
+.gift-intro {
+
+  max-width:
+    650px;
+
+  margin:
+    8px auto;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      1.15rem,
+      2.2vw,
+      1.45rem
+    );
+
+  line-height:
+    1.3;
+
+  color:
+    var(--muted);
+}
+
+
+.gift-intro.second {
+
+  margin-top:
+    2px;
+}
+
+
+.rakhi-scene {
+
+  width:
+    310px;
+
+  height:
+    270px;
+
+  margin:
+    12px auto 0;
+
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  justify-content:
+    center;
+}
+
+
+/* =========================================================
+   RAKHI
+   ========================================================= */
+
+.rakhi {
+
+  position:
+    absolute;
+
+  z-index:
+    8;
+
+  top:
+    18px;
+
+  left:
+    50%;
+
+  width:
+    270px;
+
+  height:
+    90px;
+
+  transform:
+    translateX(-50%)
+    translateY(75px)
+    scale(.55);
+
+  opacity:
+    0;
+
+  transition:
+    transform .75s
+      cubic-bezier(.18,.9,.25,1),
+    opacity .45s ease;
+}
+
+
+.rakhi-thread {
+
+  position:
+    absolute;
+
+  top:
+    42px;
+
+  width:
+    110px;
+
+  height:
+    6px;
+
+  border-radius:
+    999px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--maroon) 0 8px,
+      var(--gold) 8px 12px,
+      var(--maroon) 12px 18px
+    );
+}
+
+
+.rakhi-thread.left {
+  left: 0;
+}
+
+
+.rakhi-thread.right {
+  right: 0;
+}
+
+
+/* Decorative rakhi petals */
+
+.rakhi-decoration {
+
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  top:
+    45px;
+
+  width:
+    27px;
+
+  height:
+    40px;
+
+  transform-origin:
+    50% 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e7be74,
+      #9c2e45
+    );
+
+  border-radius:
+    60% 60% 45% 45%;
+
+  margin-left:
+    -13.5px;
+
+  margin-top:
+    -40px;
+}
+
+
+.outer-one {
+  transform:
+    rotate(0deg)
+    translateY(-25px);
+}
+
+
+.outer-two {
+  transform:
+    rotate(60deg)
+    translateY(-25px);
+}
+
+
+.outer-three {
+  transform:
+    rotate(120deg)
+    translateY(-25px);
+}
+
+
+.outer-four {
+  transform:
+    rotate(180deg)
+    translateY(-25px);
+}
+
+
+.outer-five {
+  transform:
+    rotate(240deg)
+    translateY(-25px);
+}
+
+
+.outer-six {
+  transform:
+    rotate(300deg)
+    translateY(-25px);
+}
+
+
+.rakhi-center {
+
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  top:
+    5px;
+
+  width:
+    84px;
+
+  height:
+    84px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #f5d88f 0 12%,
+      #a52e45 13% 30%,
+      #d5a355 31% 44%,
+      #7c2035 45% 58%,
+      #d5a355 59% 72%,
+      transparent 73%
+    );
+
+  box-shadow:
+    0 9px 25px
+    rgba(80,20,34,.3);
+}
+
+
+.rakhi-center-ring {
+
+  position:
+    absolute;
+
+  top:
+    50%;
+
+  left:
+    50%;
+
+  width:
+    32px;
+
+  height:
+    32px;
+
+  transform:
+    translate(-50%,-50%);
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  color:
+    white;
+
+  font-size:
+    18px;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fff4c9,
+      #d39a42 55%,
+      #86243a
+    );
+
+  box-shadow:
+    0 3px 10px
+    rgba(50,15,25,.3);
+}
+
+
+.rakhi-glow {
+
+  position:
+    absolute;
+
+  width:
+    145px;
+
+  height:
+    145px;
+
+  left:
+    50%;
+
+  top:
+    5px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(210,160,75,.2),
+      transparent 68%
+    );
+
+  opacity:
+    0;
+}
+
+
+/* =========================================================
+   GIFT BOX
+   ========================================================= */
+
+.gift-box {
+
+  position:
+    absolute;
+
+  z-index:
+    5;
+
+  left:
+    50%;
+
+  bottom:
+    5px;
+
+  width:
+    200px;
+
+  height:
+    155px;
+
+  padding:
+    0;
+
+  border:
+    0;
+
+  background:
+    transparent;
+
+  cursor:
+    pointer;
+
+  transform:
+    translateX(-50%);
+
+  filter:
+    drop-shadow(
+      0 18px 18px
+      rgba(60,15,28,.22)
+    );
+}
+
+
+.box-shadow {
+
+  position:
+    absolute;
+
+  left:
+    20px;
+
+  right:
+    20px;
+
+  bottom:
+    -5px;
+
+  height:
+    15px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(65,20,30,.18);
+
+  filter:
+    blur(5px);
+}
+
+
+.box-body {
+
+  position:
+    absolute;
+
+  left:
+    18px;
+
+  right:
+    18px;
+
+  bottom:
+    7px;
+
+  height:
+    105px;
+
+  border-radius:
+    7px 7px 15px 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #aa4051,
+      #762238
+    );
+
+  overflow:
+    hidden;
+}
+
+
+.box-ribbon.vertical {
+
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  top:
+    0;
+
+  bottom:
+    0;
+
+  width:
+    28px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #b57e39,
+      #f0ce88,
+      #b57e39
+    );
+}
+
+
+.box-ribbon.horizontal {
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  top:
+    23px;
+
+  height:
+    18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #b57e39,
+      #f0ce88,
+      #b57e39
+    );
+}
+
+
+.box-lid {
+
+  position:
+    absolute;
+
+  z-index:
+    4;
+
+  left:
+    8px;
+
+  right:
+    8px;
+
+  top:
+    22px;
+
+  height:
+    45px;
+
+  border-radius:
+    9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c45362,
+      #8d293d
+    );
+
+  transform:
+    rotate(-2deg);
+
+  transform-origin:
+    left center;
+
+  transition:
+    transform .7s
+      cubic-bezier(.18,.85,.25,1),
+    opacity .45s ease;
+}
+
+
+.lid-ribbon {
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  bottom:
+    0;
+
+  left:
+    50%;
+
+  width:
+    28px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #b57e39,
+      #f0ce88,
+      #b57e39
+    );
+}
+
+
+/* Bow */
+
+.box-bow {
+
+  position:
+    absolute;
+
+  z-index:
+    8;
+
+  top:
+    0;
+
+  left:
+    50%;
+
+  width:
+    65px;
+
+  height:
+    42px;
+
+  transform:
+    translateX(-50%);
+}
+
+
+.bow-left,
+.bow-right {
+
+  position:
+    absolute;
+
+  top:
+    7px;
+
+  width:
+    31px;
+
+  height:
+    25px;
+
+  background:
+    #d2a151;
+
+  border-radius:
+    70% 20% 70% 20%;
+}
+
+
+.bow-left {
+
+  left:
+    0;
+
+  transform:
+    rotate(-25deg);
+}
+
+
+.bow-right {
+
+  right:
+    0;
+
+  transform:
+    rotate(25deg)
+    scaleX(-1);
+}
+
+
+.bow-center {
+
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  top:
+    13px;
+
+  width:
+    18px;
+
+  height:
+    18px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    50%;
+
+  background:
+    #b37b35;
+}
+
+
+/* Open state */
+
+.gift-box.open .box-lid {
+
+  transform:
+    translateY(-82px)
+    translateX(14px)
+    rotate(-15deg);
+
+  opacity:
+    .9;
+}
+
+
+.gift-box.open .box-bow {
+
+  animation:
+    bowOpen
+    .65s
+    ease forwards;
+}
+
+
+@keyframes bowOpen {
+
+  50% {
+    transform:
+      translateX(-50%)
+      translateY(-15px)
+      rotate(-4deg);
+  }
+
+  100% {
+    transform:
+      translateX(-50%)
+      translateY(-5px)
+      rotate(0);
+  }
+
+}
+
+
+/* Rakhi reveal */
+
+.rakhi-scene.revealed .rakhi {
+
+  opacity:
+    1;
+
+  transform:
+    translateX(-50%)
+    translateY(-12px)
+    scale(1);
+}
+
+
+.rakhi-scene.revealed .rakhi-glow {
+
+  opacity:
+    1;
+
+  animation:
+    glowPulse
+    1.2s
+    ease;
+}
+
+
+@keyframes glowPulse {
+
+  0% {
+    transform:
+      translateX(-50%)
+      scale(.6);
+
+    opacity:
+      0;
+  }
+
+  50% {
+    opacity:
+      1;
+  }
+
+  100% {
+    transform:
+      translateX(-50%)
+      scale(1.15);
+
+    opacity:
+      0;
+  }
+
+}
+
+
+.gift-caption {
+
+  margin:
+    5px auto 18px;
+
+  color:
+    var(--muted);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    1.15rem;
+}
+
+
+.gift-button {
+
+  min-width:
+    175px;
+}
+
+
+/* =========================================================
+   PAGE 3 — HONESTY
+   ========================================================= */
+
+.honesty-page {
+
+  width:
+    100%;
+
+  max-width:
+    1000px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(190px, 285px);
+
+  align-items:
+    center;
+
+  gap:
+    clamp(30px, 6vw, 70px);
+
+  padding:
+    clamp(28px, 5vw, 58px);
+
+  background:
+    var(--paper);
+
+  border-radius:
+    28px;
+
+  box-shadow:
+    0 28px 80px
+    rgba(0,0,0,.25);
+}
+
+
+.honesty-text {
+
+  min-width:
+    0;
+}
+
+
+.honesty-text h2 {
+
+  margin:
+    10px 0 18px;
+
+  font-size:
+    clamp(
+      3.3rem,
+      7vw,
+      5.6rem
+    );
+
+  line-height:
+    .85;
+
+  color:
+    var(--maroon);
+}
+
+
+.honesty-body p {
+
+  margin:
+    0 0 18px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      1.35rem,
+      2.5vw,
+      1.75rem
+    );
+
+  line-height:
+    1.3;
+}
+
+
+.little-teaser {
+
+  margin-top:
+    32px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    1.55rem;
+
+  font-weight:
+    600;
+
+  font-style:
+    italic;
+
+  color:
+    var(--maroon);
+}
+
+
+.little-teaser span {
+
+  color:
+    var(--gold);
+
+  margin-left:
+    5px;
+}
+
+
+/* Main photo */
+
+.main-photo-card {
+
+  width:
+    100%;
+
+  max-width:
+    275px;
+
+  margin:
+    0 auto;
+
+  padding:
+    9px 9px 18px;
+
+  background:
+    white;
+
+  box-shadow:
+    0 16px 35px
+    rgba(55,20,25,.18);
+
+  transform:
+    rotate(2deg);
+
+  position:
+    relative;
+}
+
+
+.main-photo-card img {
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  aspect-ratio:
+    4 / 5;
+
+  object-fit:
+    cover;
+}
+
+
+.main-photo-card figcaption {
+
+  padding:
+    8px 3px 0;
+
+  text-align:
+    center;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    .95rem;
+
+  color:
+    var(--muted);
+}
+
+
+.photo-tape {
+
+  position:
+    absolute;
+
+  z-index:
+    3;
+
+  width:
+    75px;
+
+  height:
+    20px;
+
+  left:
+    50%;
+
+  top:
+    -9px;
+
+  transform:
+    translateX(-50%)
+    rotate(-3deg);
+
+  background:
+    rgba(218,188,132,.65);
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+   ========================================================= */
+
+.next-button {
+
+  display:
+    block;
+
+  margin:
+    25px auto 0;
+
+  min-width:
+    150px;
+}
+
+
+/* =========================================================
+   PAGE 4 — RECENT MEMORIES
+   ========================================================= */
+
+.memories-page {
+
+  width:
+    100%;
+
+  max-width:
+    1050px;
+
+  padding:
+    clamp(25px, 4vw, 52px);
+
+  background:
+    var(--paper);
+
+  border-radius:
+    28px;
+
+  box-shadow:
+    0 28px 80px
+    rgba(0,0,0,.25);
+}
+
+
+.memories-heading {
+
+  text-align:
+    center;
+
+  margin-bottom:
+    30px;
+}
+
+
+.memories-heading h2 {
+
+  margin:
+    8px 0 0;
+
+  font-size:
+    clamp(
+      2.6rem,
+      6vw,
+      4.8rem
+    );
+
+  line-height:
+    .95;
+
+  color:
+    var(--maroon);
+}
+
+
+/* Photo grid */
+
+.recent-photo-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(12, minmax(0,1fr));
+
+  gap:
+    18px;
+
+  align-items:
+    start;
+}
+
+
+.memory-photo {
+
+  position:
+    relative;
+
+  margin:
+    0;
+
+  padding:
+    8px;
+
+  background:
+    white;
+
+  box-shadow:
+    0 10px 24px
+    rgba(55,20,25,.15);
+}
+
+
+.memory-photo img {
+
+  width:
+    100%;
+
+  display:
+    block;
+
+  aspect-ratio:
+    4 / 5;
+
+  object-fit:
+    cover;
+}
+
+
+.memory-1 {
+
+  grid-column:
+    1 / span 4;
+
+  transform:
+    rotate(-2deg);
+}
+
+
+.memory-2 {
+
+  grid-column:
+    5 / span 4;
+
+  margin-top:
+    22px;
+
+  transform:
+    rotate(2deg);
+}
+
+
+.memory-3 {
+
+  grid-column:
+    9 / span 4;
+
+  transform:
+    rotate(-1deg);
+}
+
+
+.memory-4 {
+
+  grid-column:
+    3 / span 4;
+
+  margin-top:
+    14px;
+
+  transform:
+    rotate(2deg);
+}
+
+
+.memory-5 {
+
+  grid-column:
+    7 / span 4;
+
+  margin-top:
+    14px;
+
+  transform:
+    rotate(-2deg);
+}
+
+
+/* Tape */
+
+.tape {
+
+  position:
+    absolute;
+
+  z-index:
+    3;
+
+  width:
+    58px;
+
+  height:
+    17px;
+
+  left:
+    50%;
+
+  top:
+    -8px;
+
+  transform:
+    translateX(-50%)
+    rotate(-2deg);
+
+  background:
+    rgba(218,188,132,.62);
+}
+
+
+/* Message */
+
+.heartfelt-message {
+
+  max-width:
+    760px;
+
+  margin:
+    42px auto 0;
+
+  text-align:
+    center;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      1.3rem,
+      2.6vw,
+      1.75rem
+    );
+
+  line-height:
+    1.3;
+}
+
+
+.heartfelt-message p {
+
+  margin:
+    17px 0;
+}
+
+
+/* =========================================================
+   PAGE 5 — PHOTO STORY
+   ========================================================= */
+
+.photo-story-page {
+
+  width:
+    100%;
+
+  max-width:
+    1050px;
+
+  padding:
+    clamp(25px, 4vw, 52px);
+
+  background:
+    var(--paper);
+
+  border-radius:
+    28px;
+
+  box-shadow:
+    0 28px 80px
+    rgba(0,0,0,.25);
+
+  text-align:
+    center;
+}
+
+
+.photo-story-title {
+
+  margin:
+    10px 0 32px;
+
+  font-size:
+    clamp(
+      2.5rem,
+      6vw,
+      4.7rem
+    );
+
+  line-height:
+    .95;
+
+  color:
+    var(--maroon);
+}
+
+
+.childhood-photo-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0,1fr));
+
+  gap:
+    15px;
+
+  align-items:
+    start;
+}
+
+
+.childhood-photo-grid figure {
+
+  margin:
+    0;
+
+  padding:
+    7px;
+
+  background:
+    white;
+
+  box-shadow:
+    0 9px 20px
+    rgba(55,20,25,.14);
+
+  transition:
+    transform .25s ease;
+}
+
+
+.childhood-photo-grid figure:nth-child(odd) {
+
+  transform:
+    rotate(-1.4deg);
+}
+
+
+.childhood-photo-grid figure:nth-child(even) {
+
+  transform:
+    rotate(1.4deg);
+}
+
+
+.childhood-photo-grid figure:hover {
+
+  transform:
+    translateY(-4px)
+    rotate(0);
+}
+
+
+.childhood-photo-grid img {
+
+  width:
+    100%;
+
+  display:
+    block;
+
+  aspect-ratio:
+    1 / 1;
+
+  object-fit:
+    cover;
+}
+
+
+.photo-story-line {
+
+  margin:
+    28px auto 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    1.55rem;
+
+  color:
+    var(--muted);
+}
+
+
+.photo-story-line span {
+
+  color:
+    var(--maroon);
+
+  font-weight:
+    700;
+}
+
+
+/* =========================================================
+   PAGE 6 — FINAL
+   ========================================================= */
+
+.final-page {
+
+  width:
+    100%;
+
+  max-width:
+    820px;
+
+  padding:
+    clamp(
+      32px,
+      5vw,
+      65px
+    );
+
+  text-align:
+    center;
+
+  background:
+    var(--paper);
+
+  border:
+    1px solid
+    rgba(255,255,255,.7);
+
+  border-radius:
+    30px;
+
+  box-shadow:
+    0 30px 90px
+    rgba(0,0,0,.3);
+}
+
+
+.final-decoration {
+
+  color:
+    var(--gold);
+
+  font-size:
+    2.7rem;
+
+  margin-bottom:
+    14px;
+}
+
+
+.final-title {
+
+  max-width:
+    700px;
+
+  margin:
+    16px auto 30px;
+
+  font-size:
+    clamp(
+      3rem,
+      7vw,
+      5.6rem
+    );
+
+  line-height:
+    .9;
+
+  color:
+    var(--maroon);
+}
+
+
+.final-message {
+
+  max-width:
+    690px;
+
+  margin:
+    0 auto;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      1.3rem,
+      2.8vw,
+      1.8rem
+    );
+
+  line-height:
+    1.32;
+}
+
+
+.final-message p {
+
+  margin:
+    15px 0;
+}
+
+
+.love-line {
+
+  margin-top:
+    28px !important;
+
+  color:
+    var(--maroon);
+
+  font-size:
+    clamp(
+      2rem,
+      5vw,
+      3.4rem
+    );
+
+  font-weight:
+    600;
+}
+
+
+/* =========================================================
+   SIGNATURE
+   ========================================================= */
+
+.signature {
+
+  margin:
+    43px auto 0;
+
+  padding-top:
+    3px;
+}
+
+
+.signature-line {
+
+  width:
+    80px;
+
+  height:
+    1px;
+
+  margin:
+    0 auto 20px;
+
+  background:
+    var(--gold);
+
+  opacity:
+    .7;
+}
+
+
+.signature-small {
+
+  margin:
+    0 0 3px;
+
+  font-size:
+    1rem;
+
+  color:
+    var(--muted);
+}
+
+
+.signature-main {
+
+  margin:
+    0;
+
+  font-size:
+    1.65rem;
+
+  color:
+    var(--ink);
+}
+
+
+.signature-sub {
+
+  margin:
+    3px 0 10px;
+
+  font-size:
+    1rem;
+
+  font-style:
+    italic;
+
+  color:
+    var(--muted);
+}
+
+
+.mimilu {
+
+  margin:
+    0;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size:
+    clamp(
+      2.2rem,
+      6vw,
+      3.4rem
+    );
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .1em;
+
+  color:
+    var(--maroon);
+}
+
+
+.mimilu span {
+
+  position:
+    relative;
+
+  display:
+    inline-block;
+}
+
+
+.mimilu span::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    4%;
+
+  right:
+    4%;
+
+  bottom:
+    -5px;
+
+  height:
+    2px;
+
+  background:
+    var(--gold);
+
+  transform:
+    rotate(-2deg);
+}
+
+
+.for-sasa {
+
+  margin:
+    7px 0 0;
+
+  color:
+    var(--muted);
+
+  font-size:
+    1.1rem;
+}
+
+
+.for-sasa strong {
+
+  color:
+    var(--maroon);
+
+  font-size:
+    1.35em;
+}
+
+
+.final-rakhi {
+
+  margin:
+    28px 0 12px;
+
+  font-size:
+    3.8rem;
+}
+
+
+.closing-text {
+
+  margin:
+    12px 0 23px;
+
+  color:
+    var(--gold);
+
+  font-size:
+    .78rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    .14em;
+}
+
+
+.replay-button {
+
+  min-width:
+    175px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .screen {
+
+    padding:
+      14px 11px;
+  }
+
+
+  .opening-page {
+
+    padding:
+      25px 10px;
+  }
+
+
+  .opening-title {
+
+    font-size:
+      clamp(
+        2.9rem,
+        13vw,
+        5rem
+      );
+  }
+
+
+  .honest-page {
+
+    padding:
+      30px 19px;
+  }
+
+
+  .honesty-page {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      28px;
+
+    padding:
+      30px 20px;
+  }
+
+
+  .honesty-text {
+
+    text-align:
+      center;
+  }
+
+
+  .main-photo-card {
+
+    max-width:
+      230px;
+
+    transform:
+      rotate(1deg);
+  }
+
+
+  .recent-photo-grid {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0,1fr)
+      );
+
+    gap:
+      13px;
+  }
+
+
+  .memory-photo,
+  .memory-1,
+  .memory-2,
+  .memory-3,
+  .memory-4,
+  .memory-5 {
+
+    grid-column:
+      auto;
+
+    margin:
+      0;
+
+    transform:
+      none;
+  }
+
+
+  .memory-1 {
+
+    grid-column:
+      1 / -1;
+  }
+
+
+  .childhood-photo-grid {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0,1fr)
+      );
+
+    gap:
+      12px;
+  }
+
+
+  .childhood-photo-grid figure:nth-child(odd),
+  .childhood-photo-grid figure:nth-child(even) {
+
+    transform:
+      rotate(0);
+  }
+
+
+  .memories-page,
+  .photo-story-page,
+  .final-page {
+
+    border-radius:
+      22px;
+
+    padding:
+      25px 15px;
+  }
+
+
+  .heartfelt-message {
+
+    margin-top:
+      32px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .opening-title {
+
+    font-size:
+      clamp(
+        2.65rem,
+        14vw,
+        4.2rem
+      );
+  }
+
+
+  .opening-actions {
+
+    flex-direction:
+      column;
+
+    width:
+      100%;
+  }
+
+
+  .opening-actions .btn {
+
+    width:
+      min(
+        270px,
+        100%
+      );
+  }
+
+
+  #open-first.open-after-denied {
+
+    min-width:
+      220px;
+
+    min-height:
+      65px;
+
+    transform:
+      scale(1.04);
+  }
+
+
+  .honest-copy h2 {
+
+    font-size:
+      2.25rem;
+  }
+
+
+  .rakhi-scene {
+
+    width:
+      280px;
+
+    height:
+      255px;
+
+    transform:
+      scale(.93);
+  }
+
+
+  .honesty-text h2 {
+
+    font-size:
+      3.6rem;
+  }
+
+
+  .honesty-body p {
+
+    font-size:
+      1.3rem;
+  }
+
+
+  .main-photo-card {
+
+    max-width:
+      205px;
+  }
+
+
+  .memories-heading h2 {
+
+    font-size:
+      2.8rem;
+  }
+
+
+  .heartfelt-message {
+
+    font-size:
+      1.3rem;
+  }
+
+
+  .photo-story-title {
+
+    font-size:
+      2.8rem;
+  }
+
+
+  .final-title {
+
+    font-size:
+      3rem;
+  }
+
+
+  .final-message {
+
+    font-size:
+      1.3rem;
+  }
+
+
+  .signature-main {
+
+    font-size:
+      1.45rem;
+  }
+
+
+  .for-sasa {
+
+    font-size:
+      1rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      .01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      .01ms !important;
+
+    scroll-behavior:
+      auto !important;
+  }
+
+}
+
